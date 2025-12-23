@@ -35,16 +35,16 @@ public class MainDashboard extends JFrame {
         tabbedPane = new JTabbedPane();
         
         // Add tabs
-        tabbedPane.addTab("ðŸ“Š Dashboard", createDashboardPanel());
-        tabbedPane.addTab("ðŸ‘¥ Customer Management", createCustomerPanel());
-        tabbedPane.addTab("ðŸ”Œ Meter Management", createMeterPanel());
-        tabbedPane.addTab("ðŸ“ˆ Reading Management", createReadingPanel());
-        tabbedPane.addTab("ðŸ’¡ Plan Management", createPlanPanel());
-        tabbedPane.addTab("âš¡ Energy Analytics", createAnalyticsPanel());
+        tabbedPane.addTab(" Dashboard", createDashboardPanel());
+        tabbedPane.addTab(" Customer Management", createCustomerPanel());
+        tabbedPane.addTab("Meter Management", createMeterPanel());
+        tabbedPane.addTab(" Reading Management", createReadingPanel());
+        tabbedPane.addTab(" Plan Management", createPlanPanel());
+        tabbedPane.addTab("Energy Analytics", createAnalyticsPanel());
         
         // Admin only tabs
         if ("admin".equals(currentUser.getRole())) {
-            tabbedPane.addTab("âš™ï¸ System Admin", createAdminPanel());
+            tabbedPane.addTab("System Admin", createAdminPanel());
         }
         
         add(tabbedPane);
@@ -79,10 +79,10 @@ public class MainDashboard extends JFrame {
         contentPanel.setBackground(new Color(240, 245, 250));
         
         // Statistics cards
-        contentPanel.add(createStatCard("Total Customers", "ðŸ‘¥", String.valueOf(customerDAO.getTotalCustomers()), new Color(70, 130, 180)));
-        contentPanel.add(createStatCard("Active Meters", "ðŸ”Œ", String.valueOf(meterDAO.getTotalMeters()), new Color(34, 139, 34)));
-        contentPanel.add(createStatCard("Monthly Consumption", "ðŸ“ˆ", "1,250 kWh", new Color(255, 140, 0)));
-        contentPanel.add(createStatCard("Energy Plans", "ðŸ’¡", String.valueOf(planDAO.getTotalPlans()), new Color(147, 112, 219)));
+        contentPanel.add(createStatCard("Total Customers", "", String.valueOf(customerDAO.getTotalCustomers()), new Color(70, 130, 180)));
+        contentPanel.add(createStatCard("Active Meters", "", String.valueOf(meterDAO.getTotalMeters()), new Color(34, 139, 34)));
+        contentPanel.add(createStatCard("Monthly Consumption", "", "1,250 kWh", new Color(255, 140, 0)));
+        contentPanel.add(createStatCard("Energy Plans", "", String.valueOf(planDAO.getTotalPlans()), new Color(147, 112, 219)));
         
         panel.add(contentPanel, BorderLayout.CENTER);
         
@@ -93,11 +93,11 @@ public class MainDashboard extends JFrame {
         
         JTextArea activityArea = new JTextArea();
         activityArea.setFont(new Font("Arial", Font.PLAIN, 12));
-        activityArea.setText("â€¢ New customer registration: John Doe\n" +
-                           "â€¢ Meter reading recorded: 245.5 kWh\n" +
-                           "â€¢ Maintenance scheduled for Meter #123\n" +
-                           "â€¢ New energy plan created: Premium Residential\n" +
-                           "â€¢ System backup completed successfully");
+        activityArea.setText("New customer registration: John Doe\n" +
+                           "Meter reading recorded: 245.5 kWh\n" +
+                           "Maintenance scheduled for Meter #123\n" +
+                           "New energy plan created: Premium Residential\n" +
+                           "System backup completed successfully");
         activityArea.setEditable(false);
         
         activityPanel.add(new JScrollPane(activityArea), BorderLayout.CENTER);
@@ -757,4 +757,5 @@ public class MainDashboard extends JFrame {
         PlanManagementGUI planPanel = new PlanManagementGUI();
         return planPanel;
     }
+
 }
