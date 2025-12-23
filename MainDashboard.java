@@ -426,10 +426,10 @@ public class MainDashboard extends JFrame {
         contentPanel.setBackground(new Color(240, 245, 250));
         
         // Analytics cards
-        contentPanel.add(createAnalyticsCard("Consumption Trends", "ðŸ“Š", "View energy usage patterns over time"));
-        contentPanel.add(createAnalyticsCard("Cost Analysis", "ðŸ’°", "Analyze electricity costs and savings"));
-        contentPanel.add(createAnalyticsCard("Peak Usage", "â°", "Identify peak consumption hours"));
-        contentPanel.add(createAnalyticsCard("Efficiency Report", "ðŸŒ±", "Energy efficiency recommendations"));
+        contentPanel.add(createAnalyticsCard("Consumption Trends", "", "View energy usage patterns over time"));
+        contentPanel.add(createAnalyticsCard("Cost Analysis", "", "Analyze electricity costs and savings"));
+        contentPanel.add(createAnalyticsCard("Peak Usage", "", "Identify peak consumption hours"));
+        contentPanel.add(createAnalyticsCard("Efficiency Report", "", "Energy efficiency recommendations"));
         
         panel.add(contentPanel, BorderLayout.CENTER);
         
@@ -449,10 +449,10 @@ public class MainDashboard extends JFrame {
         JPanel adminPanel = new JPanel(new GridLayout(4, 1, 10, 10));
         adminPanel.setBackground(new Color(240, 245, 250));
         
-        adminPanel.add(createAdminButton("User Management", "ðŸ‘¥"));
-        adminPanel.add(createAdminButton("Database Backup", "ðŸ’¾"));
-        adminPanel.add(createAdminButton("System Logs", "ðŸ“‹"));
-        adminPanel.add(createAdminButton("Settings", "âš™ï¸"));
+        adminPanel.add(createAdminButton("User Management", ""));
+        adminPanel.add(createAdminButton("Database Backup", ""));
+        adminPanel.add(createAdminButton("System Logs", ""));
+        adminPanel.add(createAdminButton("Settings", ""));
         
         panel.add(adminPanel, BorderLayout.CENTER);
         
@@ -759,3 +759,4 @@ public class MainDashboard extends JFrame {
     }
 
 }
+
